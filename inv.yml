@@ -1,0 +1,15 @@
+---
+all:
+  children:
+    routers:
+      hosts:
+        R1:
+        R2:
+    switches:
+      hosts:
+        SW01:
+
+# INI FORMAT
+# [routers]
+# R1
+# R2
