@@ -1,0 +1,13 @@
+---
+- name: "PLAY 1: Capture and store vlan config"
+  hosts: switches
+  connection: network_cli
+  tasks:
+    - name: "TASK 1: Get vlan config from switches"
+      ios_command:
+        commands: "show vlan brief"
+      register: cli_result
+
+    - name: "TASK 2: Print vlan output"
+      debug:
+        msg: "{{ cli_result }}"
