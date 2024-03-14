@@ -11,3 +11,15 @@
     - name: "TASK 2: Print vlan output"
       debug:
         msg: "{{ cli_result }}"
+
+    - name: "TASK 3: Create outputs/ folder"
+      file:
+        path: "outputs"
+        state: directory
+      run_once: true
+
+
+    - name: "TASK 4: Write output to file"
+      copy:
+        content: "{{ cli_result.stdout[0] }} \n"
+        dest: "outputs/{{ inventory_hostname }}.txt"
